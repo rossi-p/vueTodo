@@ -8,7 +8,10 @@
       side
       top
     >
-      <q-checkbox v-model="task.completed" />
+      <q-checkbox
+        v-model="task.completed"
+        class="no-pointer-events"
+      />
     </q-item-section>
 
     <q-item-section>
@@ -26,7 +29,8 @@
 
     <q-item-section side>
       <q-btn
-        @click.stop="toDelete(id)"
+        @click.stop="
+        toDelete(id)"
         outline
         round
         color="negative"
@@ -40,6 +44,11 @@
 import { mapActions } from 'vuex'
 
 export default {
+  data () {
+    return {
+      checkBoxValue: false
+    }
+  },
   props: ['task', 'id'],
   methods: {
     ...mapActions(['updateTask', 'deleteTask']),

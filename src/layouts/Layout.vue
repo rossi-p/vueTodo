@@ -12,17 +12,11 @@
           @click="leftDrawerOpen = !leftDrawerOpen"
         />
 
-        <q-toolbar-title class="absolute-center">
+        <q-toolbar-title>
           Todo List
         </q-toolbar-title>
       </q-toolbar>
     </q-header>
-
-    <q-footer elevated>
-      <div class="row justify-center">
-        <Alarm></Alarm>
-      </div>
-    </q-footer>
 
     <q-drawer
       v-model="leftDrawerOpen"
@@ -57,14 +51,12 @@
 
 <script>
 import EssentialLink from 'components/EssentialLink'
-import Alarm from 'components/Alarm'
 
 export default {
   name: 'MainLayout',
 
   components: {
-    EssentialLink,
-    Alarm
+    EssentialLink
   },
 
   data () {

@@ -1,8 +1,11 @@
 <template>
   <q-page padding>
-    <q-separator spaced />
+
     <div class="row justify-center">
+
       <div class="col-10">
+        <newTask></newTask>
+        <q-separator spaced />
         <q-list
           bordered
           separator
@@ -14,9 +17,11 @@
             :id="key"
           ></task>
         </q-list>
+        <q-separator spaced />
       </div>
+
     </div>
-    <q-separator spaced />
+
   </q-page>
 </template>
 
@@ -28,6 +33,8 @@ export default {
   },
   components: {
     task: require('components/Tasks/Task.vue')
+      .default,
+    newTask: require('components/Tasks/NewTask.vue')
       .default
   }
 }
